@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+
+    <link rel="stylesheet" href=
+    "https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+
+
+    <!--jQuery library file -->
+    <script type="text/javascript" src=
+    "https://code.jquery.com/jquery-3.5.1.js">
+    </script>
+    
+    <!--Datatable plugin JS library file -->
+    <script type="text/javascript" src=
+    "https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
+    </script>
+      
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
+
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <button class="btn btn-primary">
+      <i class="fab fa-accessible-icon me-1"></i>Hello, world!
+    </button>
+    <div class="container">
+
+        <table id="MOCKID" class="table table-dark table-hover ">
+            <thead class=>
+                <tr>
+                    <th scope="col" >#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+              {% if jobs %}
+                <p>Total results: {{ jobs | length }}</p>
+                {% for job in jobs %}
+                <tr>
+                    <th scope="row">{{ job['id'] }}</th>
+                    <td>{{ job['first_name'] }}</td>
+                    <td>{{ job['gender'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+              {% endif %}
+        </table>
+  
+    </div>
+    <script src="">
+      $(document).ready(function () {
+        $('#MOCKID').DataTable({
+
+        });
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"
+    ></script>
+
+    <!-- More: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+  </body>
+</html>
